@@ -4,7 +4,12 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
 import './index.css';
+
+import "uikit/dist/css/uikit.min.css";
+import "uikit/dist/css/uikit-core.min.css";
+import "uikit/dist/js/uikit.min.js"; 
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -12,7 +17,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+          <App />
     </Provider>
   </React.StrictMode>
 );
