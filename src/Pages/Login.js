@@ -15,14 +15,17 @@ const Login = () => {
   const CallApi = () => {
     axios({
       method:'get',
-      url : 'https://jsonplaceholder.typicode.com/posts',
+      url : 'https://service-app-backend-teal.vercel.app/api/user/login',
     }).then((res) =>{
       localStorage.setItem('name' , res )
-      
     })
   }
 
-
+  // REGISTER API POST
+  // 'https://service-app-backend-teal.vercel.app/api/user/register'
+  
+  // dATA API GET 
+  // 'https://service-app-backend-teal.vercel.app/api/user/me'
 
   return (
 <>
