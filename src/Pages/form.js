@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import l1 from "../logo512.png";
 import axios from "axios";
-
-
+import swal from 'sweetalert'
+  
 const Form = () => {
 
 
@@ -14,18 +14,35 @@ const Form = () => {
   const HandleSubmit = (event) => {
     event.preventDefault();
 
-    
+    let data = {
+      name : name,
+      email : email ,
+      password : password ,
+    }
 
     axios({
       method:'post',
       url : 'https://service-app-backend-teal.vercel.app/api/user/register',
-      data : {name : name , email:email , password : password}  
-
+      data : data  
     }).then((res) =>{
-      console.log(res)
-      
-    })
 
+      console.log(res)
+      if(res.data.status === 200){
+        swal({
+          icon : 'success' ,
+          text : "Registered Successfully"
+        }).then(() => {
+          window.location.href = '/login'
+        })        
+      }
+
+      else{
+        swal({
+          icon : 'error' ,
+          text : "InComplete Fields"
+        })
+      }
+    })
   }
 
   return (

@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import './Assets/style.css'
 import Form from './Pages/form';
+import Dash from './Pages/dash';
+
 
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/form" element={<Form />} />
-          {/* <Route path="/dash" element={<div> <Dash /></div>} />  */}
+          <Route path="/dash" element={<div> <Dash /></div>} /> 
         </Routes>
       </BrowserRouter>
     </div>
